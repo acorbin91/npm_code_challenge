@@ -1,0 +1,35 @@
+{
+  "name": "code_challenge",
+  "version": "1.0.0",
+  "description": "NPM Code Challenge for icracked.com",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "fibers": "^1.0.15",
+    "jsonwebtoken": "^7.1.9",
+    "moment": "^2.15.2",
+    "mysql": "^2.12.0",
+    "node-mysql": "^0.4.2",
+    "request": "^2.78.0",
+    "synchronize": "^2.0.0",
+    "wait.for": "^0.6.6"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acorbin91/npm_code_challenge.git"
+  },
+  "author": "Andrew Corbin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acorbin91/npm_code_challenge/issues"
+  },
+  "homepage": "https://github.com/acorbin91/npm_code_challenge#readme"
+}
