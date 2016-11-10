@@ -2,16 +2,16 @@
 
 ###### When run this application will provide REST API's for creating/updating/deleting users, task lists, and tasks from a MySQL database. The outputs will either contain the word "Success" or "Error" depending on the paramaters provided. In order to use any of the API's you must first authenticate with a hardcoded user/password. This will provide you with a token, which you must include with every API request you make.
 
+## Demo
+A running demo of this application can be found at the following locations:
+http://parkitfor.me:2323/user/authenticate?username=foo&password=bar
+
 ## Installation
 In order to install and run this project, simply clone this git directory, setup your MySQL db and run db.sql in it, and change the configuration options in mysql.js to match your setup. Then "node app.js" and open up your browser to http://<your ip>:2323/user/authenticate?username=foo&password=bar to get a token. From there you can use the endpoint descriptions below to access the API's.
 
 ## Unit Testing
 You can unit test all of the user/task list/task functions by running "npm test test.js" in the project directory.
  ![alt tag](https://i.imgur.com/5EsX8bi.png)
- 
-## Demo
-A running demo of this application can be found at the following locations:
-http://parkitfor.me:2323/user/authenticate?username=foo&password=bar
 
 **/user/token**
 
