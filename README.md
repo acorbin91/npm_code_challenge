@@ -6,6 +6,12 @@
 A running demo of this application can be found at the following locations:
 http://parkitfor.me:2323/user/authenticate?username=foo&password=bar
 
+A live phpmyadmin DB GUI for this demo can be accessed at:
+http://parkitfor.me/phpmyadmin
+
+Username: node_challenge
+Password: q1UVzjF6Hmw4Rnm1
+
 ## Installation
 In order to install and run this project, simply clone this git directory, setup your MySQL db and run db.sql in it, and change the configuration options in mysql.js to match your setup. Then "node app.js" and open up your browser to http://<your ip>:2323/user/authenticate?username=foo&password=bar to get a token. From there you can use the endpoint descriptions below to access the API's.
 
@@ -15,7 +21,7 @@ You can unit test all of the user/task list/task functions by running "npm test 
 
 ## The following endpoints are available: 
 
-**/user/token**
+**/user/authenticate**
 
 Description: 
 ######Will provide an API token used for authentication when the right username and password are provided.
@@ -24,7 +30,7 @@ Paramaters:
   * username
   * password
   
-######E.g. http://<your ip>:2323/user/token?username=foo&password=bar
+######E.g. http://<your ip>:2323/user/authenticate?username=foo&password=bar
 
 ---
 
@@ -127,7 +133,7 @@ Paramaters:
   * completed_date (required) (YYYY-MM-DD)
   * completed (required) (yes-no)
   
-######E.g. http://<your ip>:2323/task/add?user_id=1&task_id=1&completed_date=2016-11-09&completed=yes&token=[token]
+######E.g. http://<your ip>:2323/task/add?user_id=1&task_list_id=1&completed_date=2016-11-09&completed=yes&token=[token]
 
 ---
 
@@ -141,7 +147,7 @@ Paramaters:
   * task_id (required)
   * completed (required) (yes-no)
   
-######E.g. http://<your ip>:2323/task/add?user_id=1&task_id=1&completed=yes&token=[token]
+######E.g. http://<your ip>:2323/task/update?task_id=1&completed=yes&token=[token]
 
 ---
 
