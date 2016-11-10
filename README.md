@@ -1,6 +1,6 @@
 # NodeJS CRUD App Code Challenge
 
-###### When run this application will provide REST API's for creating/updating/deleting users, task lists, and tasks from a MySQL database. The outputs will either contain the word "Success" or "Error" depending on the paramaters provided. In order to use any of the API's you must first authenticate with a hardcoded user/password. This will provide you with a token, which you must include with every API request you make.
+###### Or more technically, a CUD app, since there are no read functions. When run this application will provide REST API's for creating/updating/deleting users, task lists, and tasks from a MySQL database. The outputs will either contain the word "Success" or "Error" depending on the paramaters provided. In order to use any of the API's you must first authenticate with a hardcoded user/password. This will provide you with a token, which you must include with every API request you make.
 
 ## Demo
 A running demo of this application can be found at the following locations:
