@@ -13,7 +13,7 @@ Username: node_challenge
 Password: q1UVzjF6Hmw4Rnm1
 
 ## Installation
-In order to install and run this project, simply clone this git directory, setup your MySQL db and run db.sql in it, and change the configuration options in mysql.js to match your setup. Then "node app.js" and open up your browser to http://<your ip>:2323/user/authenticate?username=foo&password=bar to get a token. From there you can use the endpoint descriptions below to access the API's.
+In order to install and run this project, simply clone this git directory, setup your MySQL db and run db.sql in it, then change the configuration options in mysql.js to match your setup. Then "node app.js" in the project dir. Now open up your browser to http://<your ip>:2323/user/authenticate?username=foo&password=bar to get a token. From there you can use the endpoint descriptions below to access the API's.
 
 ## Unit Testing
 You can unit test all of the user/task list/task functions by running "npm test test.js" in the project directory.
