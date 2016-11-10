@@ -5,21 +5,7 @@ var app = express();
 var jwt = require('jsonwebtoken');
 var wait = require("wait.for");
 
-/* MySQL Config */
-var mysql      = require('mysql');
-global.MySQLConnection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'node_challenge',
-  password : 'q1UVzjF6Hmw4Rnm1',
-  database : 'node_challenge'
-});
-global.MySQLConnection.q = function(sql, params, stdCallback){ 
-            this.query(sql,params, function(err,rows,columns){ 
-                                return stdCallback(err,{rows:rows,columns:columns}); 
-                        });
-}
-global.MySQLConnection.connect();
-
+var User = require('./mysql');
 
 /* Initiate User Functions */
 var User = require('./user');
@@ -73,7 +59,7 @@ app.get("/user/delete", function(req, res) {
 });
 
 //Authentication Token
-app.get("/signin", function(req, res) {
+app.get("/user/authenticate", function(req, res) {
   
   var username = req.query.username;
   var password = req.query.password;
@@ -200,6 +186,6 @@ app.get("/task/delete", function(req, res) {
 });
 
 
-app.listen(1337);
-console.log('Server running at http://127.0.0.1:1337/');
+app.listen(2323);
+console.log('Server running at http://127.0.0.1:2323/');
 
