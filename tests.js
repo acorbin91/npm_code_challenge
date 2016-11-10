@@ -59,7 +59,7 @@ describe('TaskList', function() {
   it('update() should return "Error" as part of a string if a empty/null name or invalid user_id is provided.', function() {
     wait.launchFiber(function() {
       var data = {};
-      data.task_list_id = 0;
+      data.id = 0;
       data.name = ""
   
       var ret = TaskList.update(data);
@@ -101,7 +101,7 @@ describe('Task', function() {
     wait.launchFiber(function() {
       var data = {};
       
-      data.task_id = 0;
+      data.id = 0;
       data.completed = "not yes or no";
 
       var ret = Task.update(data);

@@ -25,7 +25,7 @@ TaskList.prototype.add = function(data) {
     return err;
   }
 
-  return "Successfully Added. ("+result.insertId+")";
+  return "Successfully Added. ("+result.rows.insertId+")";
 };
 
 
@@ -34,13 +34,13 @@ TaskList.prototype.update = function(data) {
   
   //input validation
   if (!data.name) return "Error - Invalid name.";
-  if(!data.task_list_id) return "Error - No task_list_id.";
+  if(!data.id) return "Error - No task_list_id.";
   
   try {
-    var result = wait.forMethod(connection, "q", 'SELECT * FROM task_lists WHERE id = ' + connection.escape(data.task_list_id));
+    var result = wait.forMethod(connection, "q", 'SELECT * FROM task_lists WHERE id = ' + connection.escape(data.id));
     if(result.length == 0) return "Error - No task_list with that ID.";
     else {
-       wait.forMethod(connection, "q", 'UPDATE task_lists SET ? WHERE ?', [data, { id: data.task_list_id }]);
+       wait.forMethod(connection, "q", 'UPDATE task_lists SET ? WHERE ?', [data, { id: data.id }]);
     }
   } 
   catch(err) {

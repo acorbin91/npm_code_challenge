@@ -24,7 +24,7 @@ Task.prototype.add = function(data) {
             var result = wait.forMethod(connection, "q", 'SELECT * FROM users WHERE id = ' + connection.escape(data.user_id));
             if(result.length == 0) return "Error - No user with that ID.";
             else { //if no fails then insert new task
-               var result = wait.forMethod(connection, "q", 'INSERT INTO task SET ?', data);
+               var result = wait.forMethod(connection, "q", 'INSERT INTO tasks SET ?', data);
             }
        } catch(err) {
           return err;
@@ -34,7 +34,7 @@ Task.prototype.add = function(data) {
     return err;
   }
   
-  return "Successfully Added. ("+result.insertId+")";
+  return "Successfully Added. ("+result.rows.insertId+")";
 };
 
 
@@ -45,10 +45,10 @@ Task.prototype.update = function(data) {
   if(data.completed != "yes" && data.completed != "no") return "Error - Completed field must be 'yes' or 'no'.";
   
   try {
-    var result = wait.forMethod(connection, "q", 'SELECT * FROM tasks WHERE id = ' + connection.escape(data.task_id));
+    var result = wait.forMethod(connection, "q", 'SELECT * FROM tasks WHERE id = ' + connection.escape(data.id));
     if(result.length == 0) return "Error - No task with that ID.";
     else {
-       wait.forMethod(connection, "q", 'UPDATE tasks SET ? WHERE ?', [data, { id: data.task_id }]);
+       wait.forMethod(connection, "q", 'UPDATE tasks SET ? WHERE ?', [data, { id: data.id }]);
     }
   } catch(err) {
     return err;

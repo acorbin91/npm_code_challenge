@@ -102,7 +102,7 @@ app.get("/task_list/update", function(req, res) {
   var TaskList = new TaskList([]);
   
   var data = {};
-  data.task_list_id = req.query.task_list_id;
+  data.id = req.query.task_list_id;
   data.name = req.query.name;
 
   wait.launchFiber(function() {
@@ -158,7 +158,7 @@ app.get("/task/update", function(req, res) {
   
   var data = {};
   
-  data.task_id = req.query.task_id;
+  data.id = req.query.task_id;
   data.completed = req.query.completed;
 
   wait.launchFiber(function() {
@@ -178,7 +178,7 @@ app.get("/task/delete", function(req, res) {
   
   var task_id = req.query.task_id;
   wait.launchFiber(function() {
-    result = TaskList.del(task_id);
+    result = Task.del(task_id);
     res.send(result);
     res.end();
   });

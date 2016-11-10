@@ -32,8 +32,7 @@ User.prototype.add = function(data) {
   catch(err) {
     return err;
   }
-  
-  return "Successfully Added. ("+result.insertId+")";
+  return "Successfully Added. ("+result.rows.insertId+")";
 };
 
 
