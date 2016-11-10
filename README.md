@@ -13,6 +13,8 @@ In order to install and run this project, simply clone this git directory, setup
 You can unit test all of the user/task list/task functions by running "npm test test.js" in the project directory.
  ![alt tag](https://i.imgur.com/5EsX8bi.png)
 
+## The following endpoints are available: 
+
 **/user/token**
 
 Description: 
